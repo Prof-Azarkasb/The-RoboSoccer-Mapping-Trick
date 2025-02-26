@@ -50,18 +50,3 @@ if __name__ == "__main__":
         Process(4, 5, 3)
     ]
     sjn_scheduling(processes)
-"""
-Shortest Job Next (SJN) is a non-preemptive CPU scheduling algorithm that selects the process with the shortest burst time from the list of available processes for execution next. If two processes have the same burst time, the one that arrived first is selected. This algorithm is optimal in terms of minimizing the average waiting time for a given set of processes, but it requires prior knowledge of the burst time of each process, which may not always be available in real-world scenarios.
-The Shortest Job Next (SJN) algorithm implementation does not require any external Python libraries beyond the standard Python library.
-Explanation:
-    Process Class: Each process is represented by a Process class, which includes attributes such as process ID (pid), arrival time, burst time, completion time, turnaround time, and waiting time.
-
-    Scheduling Function:
-        Sorting: The processes are initially sorted by their arrival time.
-        Process Selection: The algorithm selects the process with the shortest burst time that has already arrived by the current time.
-        Execution: The selected process is executed until completion, and its completion time, turnaround time, and waiting time are calculated.
-        Time Advancement: The system time is advanced by the burst time of the executed process, and the process is marked as completed.
-        This process repeats until all processes are completed.
-    Output: The program prints a table showing the Process ID, arrival time, burst time, completion time, turnaround time, and waiting time for each process.
-Shortest Job Next is advantageous for reducing average waiting time but can suffer from the "starvation" problem, where longer processes may be perpetually delayed if shorter processes keep arriving. This makes SJN ideal for batch processing systems where all jobs are known ahead of time.
-"""

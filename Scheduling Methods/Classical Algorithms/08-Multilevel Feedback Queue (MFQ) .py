@@ -64,27 +64,3 @@ if __name__ == "__main__":
     print("PID\tArrival Time\tBurst Time\tCompletion Time\tWaiting Time\tTurnaround Time")
     for process in completed_processes:
         print(f"{process.pid}\t{process.arrival_time}\t\t{process.burst_time}\t\t{process.completion_time}\t\t{process.waiting_time}\t\t{process.turnaround_time}")
-"""
-Multilevel Feedback Queue (MFQ) is an advanced CPU scheduling algorithm that allows processes to move between different queues based on their behavior and characteristics. The primary objective of MFQ is to optimize both response time and turnaround time while ensuring fairness among processes.
-Required Libraries: The Multilevel Feedback Queue (MFQ) algorithm implementation uses the built-in "queue" library in Python. No external libraries are required, making the code straightforward to run in any Python environment.
-Explanation:
-Key Features of the Code:
-    Process Class:
-        Encapsulates the details of each process, including pid, arrival_time, burst_time, remaining_time, start_time, completion_time, waiting_time, and turnaround_time.
-        The queue_level attribute determines the current queue level of the process.
-
-    Multiple Queues:
-        Processes are organized into multiple queues, each with a different time quantum.
-        The process starts in the highest-priority queue and may move to lower-priority queues if it exceeds the time quantum.
-
-    Time Quantum:
-        Each queue has a defined time quantum. If a process exceeds its time quantum in one queue, it is moved to the next lower-priority queue.
-        Processes are only completed when their remaining_time is fully executed.
-
-    Dynamic Time Management:
-        The system clock (time) advances dynamically based on the time quantum and process execution time.
-        The code handles idle periods when no processes are ready to execute, ensuring continuous advancement of time.
-
-    Non-Preemptive Execution:
-        Each process is executed non-preemptively within its assigned queue for the duration of its time quantum.
-"""

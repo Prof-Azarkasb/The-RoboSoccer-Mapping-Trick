@@ -40,22 +40,3 @@ if __name__ == "__main__":
     print("Scheduled Tasks:")
     for i in range(total_time):
         print(f"Time {i}: Task {scheduled_tasks[i]}")
-"""
-Lottery Scheduling (LS) is a randomized algorithm for allocating resources among tasks. Each task is assigned a certain number of lottery tickets, and the scheduler selects a task by randomly drawing a ticket. The task holding the winning ticket is then allowed to execute. This method provides a probabilistic guarantee of fairness, where the number of tickets a task has determines its likelihood of being chosen.
-equired Libraries: The Lottery Scheduling (LS) algorithm implementation uses Python's built-in "random" library for generating random numbers, which is essential for simulating the lottery draw.
-Explanation:
-Key Features of the Code:
-    Task Class:
-        The Task class represents each task in the system. Each task has a unique task_id, a number of tickets, and an execution_time to keep track of the total time the task has been scheduled.
-    Ticket Distribution:
-        The total number of tickets is the sum of tickets from all tasks. The scheduler simulates the lottery by generating a random number within the range of total tickets and assigns the execution to the task corresponding to the winning ticket.
-    Task Scheduling:
-        The algorithm iterates over the total time specified (total_time), selecting a task at each time unit based on the lottery system.
-        Each time a task is selected, its execution_time is incremented, and the task is recorded in the scheduled_tasks list.
-    Random Selection:
-        The core idea of the algorithm is random selection, making it distinct from deterministic scheduling algorithms like Round Robin or Priority Scheduling.
-        The probability of a task being selected is proportional to the number of tickets it holds. Hence, a task with more tickets is more likely to be chosen, but the randomness ensures that all tasks have a chance to run.
-    Fairness and Flexibility:
-        Lottery Scheduling is particularly useful in systems where tasks have varying priorities, but strict deterministic scheduling is not desirable.
-        By adjusting the number of tickets, the system can dynamically control the priority of tasks while maintaining a level of unpredictability.
-"""

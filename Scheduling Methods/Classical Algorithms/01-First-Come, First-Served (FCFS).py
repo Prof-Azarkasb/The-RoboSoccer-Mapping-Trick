@@ -33,17 +33,3 @@ if __name__ == "__main__":
         Process(4, 3, 2)
     ]
     fcfs_scheduling(processes)
-"""
-First-Come, First-Served (FCFS) is one of the simplest scheduling algorithms used in operating systems. It works on a straightforward principle: processes are attended to in the order they arrive, without considering their burst time or priority.
-The implementation of the FCFS algorithm in Python is simple and does not require any external libraries other than the standard Python library.
-Explanation:
-    Process Class: Each process is represented by a Process class, which stores its ID, arrival time, burst time, completion time, turnaround time, and waiting time.
-    Sorting by Arrival Time: The processes are first sorted by their arrival time to ensure they are executed in the order they arrive.
-    Scheduling Logic:
-        The current_time variable keeps track of the system clock.
-        For each process, the completion time is calculated based on the current_time.
-        The turnaround time is the difference between the completion time and the arrival time, while the waiting time is the difference between the turnaround time and the burst time.
-        The current_time is updated after each process is executed.
-    Output: The program prints the Process ID (PID), arrival time, burst time, completion time, turnaround time, and waiting time for each process.
-FCFS is simple and easy to implement, but it can lead to poor performance in certain scenarios, such as when processes with long burst times arrive first, causing the shorter jobs to wait, a phenomenon known as the "convoy effect." Despite this, it remains a foundational concept in understanding process scheduling.
-"""

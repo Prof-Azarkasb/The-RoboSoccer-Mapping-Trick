@@ -48,23 +48,3 @@ if __name__ == "__main__":
     print("PID\tArrival Time\tBurst Time\tCompletion Time\tWaiting Time\tTurnaround Time")
     for process in completed_processes:
         print(f"{process.pid}\t{process.arrival_time}\t\t{process.burst_time}\t\t{process.completion_time}\t\t{process.waiting_time}\t\t{process.turnaround_time}")
-"""
-Multilevel Queue Scheduling (MQS) is a scheduling algorithm used in operating systems to manage processes that have different priority levels. Processes are divided into multiple queues based on priority, with each queue possibly using a different scheduling algorithm. Typically, higher-priority queues are processed before lower-priority queues.
-The Multilevel Queue Scheduling (MQS) algorithm implementation does not require any external Python libraries beyond the standard Python library.
-Explanation:
-Key Features of the Code:
-    Process Class:
-        Encapsulates the details of each process, such as process ID (pid), arrival time (arrival_time), burst time (burst_time), and priority (priority).
-        Includes methods for calculating waiting time, turnaround time, and completion time.
-
-    Multilevel Queues:
-        Processes are organized into different queues based on their priority level.
-        Higher-priority queues are processed first, ensuring that processes in higher-priority queues are completed before those in lower-priority queues.
-
-    Execution Strategy:
-        The algorithm iterates over each queue, processing all processes within the queue before moving to the next lower-priority queue.
-        The time is incremented based on the burst time of each process, and the process's completion, waiting, and turnaround times are calculated accordingly.
-
-    No Preemption:
-        The provided implementation assumes non-preemptive scheduling within each queue. Once a process is started, it runs to completion before the next process is selected.
-"""
